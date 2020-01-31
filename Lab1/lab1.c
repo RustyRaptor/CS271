@@ -5,6 +5,7 @@
 
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 
 // A program to count occurences of a digit in a number
@@ -34,12 +35,17 @@ int main (void) {
     // us the last digit in the number
     // Then we divide by 10. Since it's integer division it will just
     // remove the last digit.
-    while (number > 0){
-        if (digit == number%10)
+    while (number > 0 || number < 0){
+        if (digit == abs(number%10))
             count++;
         
         number=number/10;
     } // end loop
+
+    // avoids any issues by setting count to 1 if the digit is 
+    // the same as the number
+    if (number == digit)
+        count = 1;
     
     // Print out all the info
     printf("The digit (%d) appears %d times in the number (%d)\n",
