@@ -1,2 +1,3 @@
-fileInputExample-1: fileInputExample-1.c
-	gcc -Wall -Werror fileInputExample-1.c -o ./bin/fileInputExample
+cereal: cereal.c
+	mkdir bin
+	gcc -Wall -Werror cereal.c -o ./bin/cereal
