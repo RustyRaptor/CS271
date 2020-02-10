@@ -1,6 +1,6 @@
 cereal: cereal.c
 	mkdir bin || gcc -Wall -Werror cereal.c -o ./bin/cereal
-cereal dbg: cereal.c
+debug: cereal.c
 	mkdir bin || gcc -Wall -Werror -g -O0 cereal.c -o ./bin/cereal
 	
 setup:

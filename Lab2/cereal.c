@@ -13,7 +13,7 @@ int main(void) {
   int min_protein;
   int max_calories;
   int max_sugar;
-  
+
   // get constraint values
 
   // get protein
@@ -33,12 +33,13 @@ int main(void) {
 
   printf("Here are the cereals that match your criteria:\n\n");
 
-  FILE *filePtr;
+
+
 
   char name[23], compname[15];
   char company = ' ';
   int cals = 0, protein = 0, sugar = 0, count = 0;
-  
+  FILE *filePtr;
   // ensure the file exists.
   if ((filePtr = fopen("./cereal.txt", "r")) == NULL)
     printf("File could not be opened\n");
@@ -67,7 +68,7 @@ int main(void) {
         case 'Q':
           strcpy(compname, "Quaker Oats");
           break;
-
+        // default in case a different brand is added, also useful for debugging. 
         default:
           strcpy(compname, "Generic");
           break;
@@ -78,9 +79,9 @@ int main(void) {
           sugar <= max_sugar) {
         count++;
         printf(
-            "%s\t%s\t%d calories\n\t- protien\t%d grams\n\t- sugar\t\t%d "
+            "%-14s\t%-22s\t%4d calories\n\t\t  - protien\t\t%4d grams\n\t\t  - sugar\t\t%4d "
             "grams\n\n",
-            name, compname, cals, protein, sugar);
+            compname, name, cals, protein, sugar);
       } // end if
     } // end while
   } // end else
