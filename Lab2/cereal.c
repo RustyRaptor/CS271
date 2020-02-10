@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(void) {
+int main( void ) {
   int min_protein;
   int max_calories;
   int max_sugar;
@@ -33,7 +33,10 @@ int main(void) {
   char name[23], compname[15];
   char company = ' ';
   int cals = 0, protein = 0, sugar = 0, count = 0;
+
+  // declare our file to read from
   FILE *filePtr;
+
   // ensure the file exists.
   if ((filePtr = fopen("./cereal.txt", "r")) == NULL)
     printf("File could not be opened\n");
@@ -41,8 +44,8 @@ int main(void) {
   else {
     while (!feof(filePtr)) {
       // read in all the needed data from the line
-      fscanf(filePtr, "%s %c %d %d %*d %*d %*f %*f %d", name, &company, &cals,
-             &protein, &sugar);
+      fscanf(filePtr, "%s %c %d %d %*d %*d %*f %*f %d",
+              name, &company, &cals, &protein, &sugar);
 
       // We must break the loop because it will read one more line otherwise
       if (feof(filePtr)) {
