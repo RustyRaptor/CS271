@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int main(int argc, char const *argv[]) {
+int main(void) {
   int min_protein;
   int max_calories;
   int max_sugar;
@@ -28,23 +28,52 @@ int main(int argc, char const *argv[]) {
   scanf("%d", &max_sugar);
 
   printf("Here are the cereals that match your criteria:\n\n");
+
   FILE *filePtr;
-  int age, count = 0, total = 0;
-  char last[30], first[20];
-  if ((filePtr = fopen("sampleData.txt", "r")) == NULL)
+
+  char name[23], compname[15];
+  char company = ' ';
+  int cals = 0, protein = 0, sugar = 0, count = 0;
+
+  if ((filePtr = fopen("./data2.txt", "r")) == NULL)
     printf("File could not be opened\n");
 
+  
   else {  // file open was successful
-
-    fscanf(filePtr, " %s%s%d", first, last, &age);
-
+  
     while (!feof(filePtr)) {
-      count++;
-      total += age;
+      // read in all the needed data from the line
+      fscanf(
+        filePtr,
+        "%s %s %d %d %*d %*d %*f %*f %d"
+        , name, &company, &cals, &protein, &sugar
+      ); // end fscanf
+      // Set the full company name based on the letter
+      switch (company){
+      case 'G':
+        strcpy(compname,"General Mills");
+        break;
+      case 'K':
+        strcpy(compname,"Kellogs");
+        break;
+      case 'Q':
+        strcpy(compname,"Quaker Oats");
+        break;
 
-      fscanf(filePtr, " %s%s%d", first, last, &age);
+      default:
+        strcpy(compname,"Generic");
+        break;
+      } // end switch
+      
+      // if the cereal meets the requirements, print it and increase count. 
+      if (cals <= max_calories && protein >= min_protein && sugar <= max_sugar) {
+        count++;
+        printf(
+          "%s\t%s\t%d calories\n\t- protien\t%d grams\n\t- sugar\t%d grams\n\n",
+          name, compname, cals ,protein ,sugar
+        );
+      } // end if
     }  // end while
-
   }  // end else
   return 0;
 }
