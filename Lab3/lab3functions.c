@@ -50,18 +50,24 @@ void timeDisplay( int secs ) {
 
 void rollingDice( int n ) {
      int total = 0;
-     int arr[13] = { };
-     srand(time(NULL));
+     // don't need size 13 because I just remap with -2
+     int results[11] = {}; 
+     srand( time( NULL ) );
 
-     for (int i = 0; i < n; i++) {
-          total = (1+(rand()%6)) + (1+(rand()%6));
-          arr[total - 2]++;
+     // roll the dice n times. Increment the result in the array.
+     for ( int i = 0; i < n; i++ ) {
+          total = ( 1 + ( rand( ) % 6 ) ) + ( 1 + ( rand( ) % 6 ) );
+          results[total - 2]++;
      }
-     printf("%10s%7s%9s\n", "Dice Total", "", "Frequency");
-     printf("%10s%7s%9s\n", "----------", "", "---------");
 
+     // print them pretty
+     printf( "%10s%7s%10s\n", "Dice Total", "", "Frequency" );
+     printf( "%10s%7s%10s\n", "----------", "", "----------" );
 
-     for (int i = 0; i < 11; i++) {
-          printf("%10d%7s%9d\n", i + 2, "", arr[i]);
+     // I understand that in the example they are centered.
+     // I just feel it's not practical to center them when they look fine
+     // right justified. It also gives more space if the numbers get high.
+     for ( int i = 0; i < 11; i++ ) {
+          printf( "%10d%7s%10d\n", i + 2, "", results[i] );
      }
 }
