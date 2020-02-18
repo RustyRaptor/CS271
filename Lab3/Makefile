@@ -1,7 +1,6 @@
-cereal: cereal.c
-	mkdir bin || gcc -Wall -Werror cereal.c -o ./bin/cereal
-debug: cereal.c
-	mkdir bin || gcc -Wall -Werror -g -O0 cereal.c -o ./bin/cereal
-	
-setup:
-	mkdir bin
+lab3: lab3.c lab3functions.c lab3functions.h
+	gcc -c -Wall -Werror lab3functions.c
+	gcc -Wall -Werror lab3.c -o lab3
+
+clean:
+	rm -rf *.o
