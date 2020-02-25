@@ -4,11 +4,7 @@
 //  written by: Ziad Arafat
 //  Date Written: 2020-02-17
 
-
-// Why does it ask us to include the header file here? Shouldn't we be including
-// the functions C file? It won't work otherwise. 
-// #include "lab3functions.h"
-#include "lab3functions.c"
+#include "lab3functions.h"
 #include <stdio.h>
 
 int main( void ) {

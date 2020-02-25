@@ -9,6 +9,8 @@
 #include <stdlib.h>
 #include <time.h>
 
+// input two numbers a and b
+// print a list of their distinct common factors.
 void factors( int a, int b ) {
      // Swaps if a < b
      if ( a < b ) {
@@ -28,6 +30,8 @@ void factors( int a, int b ) {
      }
 }
 
+// input a span of time in seconds
+// print that time in HH:MM:SS format
 void timeDisplay( int secs ) {
      int hh = 0;
      int mm = 0;
@@ -48,10 +52,13 @@ void timeDisplay( int secs ) {
      printf( "The time is %02d:%02d:%02d\n", hh, mm, ss );
 }
 
+// roll two dice an N number of time.
+// print a statistical list of occurences
 void rollingDice( int n ) {
      int total = 0;
+
      // don't need size 13 because I just remap with -2
-     int results[11] = {}; 
+     int results[11] = {};
      srand( time( NULL ) );
 
      // roll the dice n times. Increment the result in the array.
@@ -67,6 +74,8 @@ void rollingDice( int n ) {
      // I understand that in the example they are centered.
      // I just feel it's not practical to center them when they look fine
      // right justified. It also gives more space if the numbers get high.
+     // the printf statement doesn't support centering things without loss
+     // of good alignment.
      for ( int i = 0; i < 11; i++ ) {
           printf( "%10d%7s%10d\n", i + 2, "", results[i] );
      }

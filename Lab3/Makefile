@@ -1,6 +1,13 @@
-lab3: lab3.c lab3functions.c lab3functions.h
-	gcc -c -Wall -Werror lab3functions.c
-	gcc -Wall -Werror lab3.c -o lab3
+all: lab3
+
+lab3: lab3functions.o lab3.o
+	gcc -Werror -Wall lab3functions.o lab3.o -o lab3
+
+lab3.o: lab3.c lab3functions.h
+	gcc -Werror -Wall -c lab3.c
+
+lab3functions.o: lab3functions.c lab3functions.h
+	gcc -Werror -Wall -c lab3functions.c
 
 clean:
 	rm -rf *.o
