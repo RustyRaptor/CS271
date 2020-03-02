@@ -14,19 +14,26 @@
 int main( void ) {
      //Problem 1
      printf( "Problem 1\n" );
+
      int intArr[20] = {};
+
      fillInteger( intArr, 20, -20, 20 );
 
-     for ( int i = 1; i <= 20; i++ ) {
+     for ( int i = 0; i < 20; i++ ) {
           printf( "%d ", intArr[i] );
-          if ( i % 10 == 0 ) {
+
+          // when we reach a multiple of 10 print a newline.
+          if ( ( i + 1 ) % 10 == 0 ) {
                printf( "\n" );
           } // end if
      } // end for
      printf( "\n" );
 
      findConsecutive( intArr, 20 );
+
+     // helps make the output more eye friendly.
      printf( "\n\n" );
+
      //Problem 2
      printf( "Problem 2\n" );
 
@@ -40,7 +47,7 @@ int main( void ) {
      printf( "\n" );
 
      findTriples( charArr, 50 );
-     printf( "\n\n" );
+
      // Problem 3
      char *wordArray[20] = { "one",       "two",      "three",    "four",
                              "five",      "six",      "seven",    "eight",
@@ -50,7 +57,6 @@ int main( void ) {
 
      char userChar = '0';
 
-     
      while ( !isalpha( userChar ) ) {
           printf( "please enter an alphabetic character to search for: " );
           userChar = tolower( getchar( ) );
@@ -58,7 +64,7 @@ int main( void ) {
      } // end while
 
      findWords( wordArray, 20, userChar );
-     
+
      printf( "\n\n" );
 
      // Problem 4

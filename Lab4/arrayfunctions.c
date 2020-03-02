@@ -20,7 +20,7 @@ void fillInteger( int a[], int length, int min, int max ) {
 void fillCharacter( char c[], int length, char start, char end ) {
      srand( time( NULL ) );
      for ( int i = 0; i < length; i++ ) {
-          c[i] = ( start + ( rand( ) % ( end - start ) ) );
+          c[i] = ( start + ( rand( ) % ( ( end + 1 ) - start ) ) );
      } // end for
 }
 
@@ -30,16 +30,19 @@ void findConsecutive( int array[], int length ) {
 
      while ( array[b] != '\0' ) {
           if ( array[b] == array[a] + 1 ) {
-               printf( "there are consecutive integers at index %d and %d\n", a,
-                       b );
+               printf(
+                    "there are consecutive integers at index [%d] and [%d]\n",
+                    a, b );
           } // end if
           if ( array[b] == array[a] - 1 ) {
-               printf( "there are consecutive integers at index %d and %d\n", a,
-                       b );
+               printf(
+                    "there are consecutive integers at index [%d] and [%d]\n",
+                    a, b );
           } // end if
           a++;
           b++;
      } // end while
+     printf( "\n" );
 }
 
 void findTriples( char c[], int length ) {
@@ -48,20 +51,14 @@ void findTriples( char c[], int length ) {
      int l = 2;
 
      while ( c[l] != '\0' ) {
-          if ( c[j] == c[k] + 1 && c[k] == c[l] + 1 ) {
-               printf(
-                    "there are sequential letters at index %d and %d and %d\n",
-                    j, k, l );
-          } // end if
           if ( c[j] == c[k] - 1 && c[k] == c[l] - 1 ) {
-               printf(
-                    "there are sequential letters at index %d and %d and %d\n",
-                    j, k, l );
+               printf( "%c%c%c\n", c[j], c[k], c[l] );
           } // end if
           j++;
           k++;
           l++;
      } // end while
+     printf( "\n" );
 }
 
 void findWords( char *c[], int length, char letter ) {
@@ -70,16 +67,24 @@ void findWords( char *c[], int length, char letter ) {
                printf( "%s, ", c[i] );
           } // end if
      } // end for
+     printf( "\n" );
 }
 
 void fillFloat( float a[], int length, float min, float max ) {
+     srand( time( NULL ) );
+     // we start with a random float
+     // we then multiply by 10.0 and cast to an integer
+     // then we cast back to float and divide by 10.0 to get the 1 decimal place.
+     float initfloat;
+     int intcast;
+     float finalfloat;
      for ( int i = 0; i < length; i++ ) {
-          a[i] = ( ( float )( 
-                    ( int )( ( min + ( float )rand( ) /
-                                          ( float )( RAND_MAX / max ) ) * 10.0 
-                                          ) ) ) 
-                                          / 10.0;
+          initfloat = min + ( ( float )rand( ) / ( float )( RAND_MAX / max ) );
+          intcast = ( int )( initfloat * 10.0 );
+          finalfloat = ( ( float )intcast ) / 10.0;
+          a[i] = finalfloat;
      } // end for
+     printf( "\n" );
 }
 
 float floatMean( float array[], int length ) {
