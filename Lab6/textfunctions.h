@@ -10,6 +10,7 @@
 void blockPrint( const char *c );
 void wordPrint( const char *c );
 void removePunctuation( char *c );
+void swap( char *aPtr, char *bPtr ); // for selection sort algorithm
 void stringSort( char *c );
 
 #endif

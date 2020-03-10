@@ -14,7 +14,7 @@
 int main( void ) {
      char line[80];
 
-     // int count;
+     int count = 1;
 
      FILE *cfPtr;
 
@@ -23,8 +23,15 @@ int main( void ) {
      } else {
           fgets( line, 80, cfPtr );
           while ( !feof( cfPtr ) ) {
-               printf( "Line Read: %s\n\n", line );
+               printf("Processing line #%d\n", count);
+               wordPrint(line);
+               removePunctuation(line);
+               wordPrint(line);
+               stringSort(line);
+               blockPrint(line);
                fgets( line, 80, cfPtr );
+               count++;
+               printf("\n");
           } // end while
           fclose( cfPtr );
      } // end else
