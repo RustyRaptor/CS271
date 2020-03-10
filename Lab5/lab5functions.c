@@ -28,7 +28,6 @@ int selectionSort( float *a, int length ) {
      int compCount = 0;
      for ( int i = 0; i < length; i++ ) {
           int min = i;
-
           for ( int j = i; j < length; j++ ) {
                if ( *( a + j ) < *( a + min ) ) {
                     min = j;
