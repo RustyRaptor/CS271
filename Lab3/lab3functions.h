@@ -1,4 +1,4 @@
-//  CS278 - Lab Assignment: #3
+//  CS271 - Lab Assignment: #3
 //  Program name: Lab3
 //  Purpose of program: generates random numbers
 //  written by: Ziad Arafat

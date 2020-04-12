@@ -1,4 +1,4 @@
-//  CS278 - Lab Assignment: 2
+//  CS271 - Lab Assignment: 2
 //  Program Name: Cereal
 //  Purpose: Finds the healthiest Cereal
 //  written by: Ziad Arafat

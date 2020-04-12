@@ -1,4 +1,4 @@
-//  CS278 - Lab Assignment: num
+//  CS271 - Lab Assignment: num
 //  Program name: ProgName
 //  Description: Purpose
 //  written by: Ziad Arafat

@@ -1,4 +1,4 @@
-//  CS278 - Lab Assignment: #4
+//  CS271 - Lab Assignment: #4
 //  Program name: Lab 4 Arrays
 //  Purpose of program: Does some stuff with arrays
 //  written by: Ziad Arafat

@@ -1,4 +1,4 @@
-//  CS278 - Lab Assignment: 6
+//  CS271 - Lab Assignment: 6
 //  Program name: C Strings
 //  Purpose of program: Does Stringy Things
 //  written by: Ziad Arafat
@@ -23,15 +23,15 @@ int main( void ) {
      } else {
           fgets( line, 80, cfPtr );
           while ( !feof( cfPtr ) ) {
-               printf("Processing line #%d\n", count);
-               wordPrint(line);
-               removePunctuation(line);
-               wordPrint(line);
-               stringSort(line);
-               blockPrint(line);
+               printf( "Processing line #%d\n", count );
+               wordPrint( line );
+               removePunctuation( line );
+               wordPrint( line );
+               stringSort( line );
+               blockPrint( line );
                fgets( line, 80, cfPtr );
                count++;
-               printf("\n");
+               printf( "\n" );
           } // end while
           fclose( cfPtr );
      } // end else

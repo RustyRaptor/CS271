@@ -1,4 +1,4 @@
-//  CS278 - Lab Assignment: 6
+//  CS271 - Lab Assignment: 6
 //  Program name: C Strings
 //  Purpose of program: Does Stringy Things
 //  written by: Ziad Arafat
@@ -21,11 +21,6 @@ void blockPrint( const char *c ) {
           printf( "\n" );
      } // end for
 }
-// void blockPrint ( const char *strPtr ){
-//     for(int i=0; i<strlen(strPtr); i++){
-//         printf("%c", *(strPtr+i));
-//     }
-// }
 
 void wordPrint( const char *c ) {
      // creates a copy of the string that we can tokenize with strtok
@@ -52,7 +47,7 @@ void removePunctuation( char *c ) {
      } // end for
 }
 
-// same swap from lab5 to do the selection sort. 
+// same swap from lab5 to do the selection sort.
 void swap( char *aPtr, char *bPtr ) {
      float t = *aPtr;
      *aPtr = *bPtr;
@@ -61,7 +56,7 @@ void swap( char *aPtr, char *bPtr ) {
 void stringSort( char *c ) {
      for ( int i = 0; c[i] != '\0'; i++ ) {
           int space = isspace( c[i] );
-          // if it's a space delete it like we do in removePunctuation 
+          // if it's a space delete it like we do in removePunctuation
           if ( space ) {
                for ( int j = i; c[j] != '\0'; j++ ) {
                     c[j] = c[j + 1];

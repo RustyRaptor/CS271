@@ -1,4 +1,4 @@
-//  CS278 - Lab Assignment: #5
+//  CS271 - Lab Assignment: #5
 //  Program name: Lab5 Pointers
 //  Purpose of program: does pointer stuff
 //  written by: Ziad Arafat

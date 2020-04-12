@@ -1,4 +1,4 @@
-//  CS278 - Lab Assignment: 6
+//  CS271 - Lab Assignment: 6
 //  Program name: C Strings
 //  Purpose of program: Does Stringy Things
 //  written by: Ziad Arafat
