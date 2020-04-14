@@ -1,23 +1,35 @@
-all: lab6
+all: Calendar
+	# cppcheck --enable=warning,performance,portability --error-exitcode=1 -v .
 
-lab6: textfunctions.o lab6.o
-	# gcc -Werror -Wall -O0 textfunctions.o lab6.o -o lab6
-	gcc -Werror -Wall -O3 textfunctions.o lab6.o -o lab6
-	# gcc -Werror -Wall textfunctions.o lab6.o -o lab6
-	# gcc -Wall textfunctions.o lab6.o -o lab6
-	# valgrind ./lab6
+Calendar: Time.o Date.o Calendar.o
+	# g++ -Werror -Wall -O0 Time.o Calendar.o -o Calendar
+	# g++ -Werror -Wall -O3 Time.o Calendar.o -o Calendar
+	# g++ -Werror -Wall Time.o Calendar.o -o Calendar
+	# g++ -Wall Time.o Calendar.o -o Calendar
+	g++ -O0 -Wall -Wextra -Werror -pedantic Time.o Date.o Calendar.o -o Calendar
+	# valgrind ./Calendar
 
-lab6.o: lab6.c textfunctions.h
-	# gcc -Werror -Wall -O0 -c lab6.c
-	# gcc -Werror -Wall -O3 -c lab6.c
-	gcc -Werror -Wall -c lab6.c
-	# gcc -Wall -c lab6.c
+Calendar.o: Calendar.cpp Time.h Date.h
+	# g++ -Werror -Wall -O0 -c Calendar.cpp
+	# g++ -Werror -Wall -O3 -c Calendar.cpp
+	# g++ -Werror -Wall -c Calendar.cpp
+	# g++ -Wall -c Calendar.cpp
+	g++ -Wall -Wextra -Werror -pedantic -c Calendar.cpp
 
-textfunctions.o: textfunctions.c textfunctions.h
-	# gcc -Werror -Wall -O0 -c textfunctions.c
-	gcc -Werror -Wall -O3 -c textfunctions.c
-	# gcc -Werror -Wall -c textfunctions.c
-	# gcc -Wall -c textfunctions.c
+Time.o: Time.cpp Time.h
+	# g++ -Werror -Wall -O0 -c Time.cpp
+	# g++ -Werror -Wall -O3 -c Time.cpp
+	# g++ -Werror -Wall -c Time.cpp
+	# g++ -Wall -c Time.cpp
+	g++ -Wall -Wextra -Werror -pedantic -c Time.cpp
+
+Date.o: Date.cpp Date.h
+	# g++ -Werror -Wall -O0 -c Date.cpp
+	# g++ -Werror -Wall -O3 -c Date.cpp
+	# g++ -Werror -Wall -c Date.cpp
+	# g++ -Wall -c Date.cpp
+	g++ -Wall -Wextra -Werror -pedantic -c Date.cpp
+	
 
 clean:
 	rm -rf *.o
